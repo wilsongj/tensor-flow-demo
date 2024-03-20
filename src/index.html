@@ -1,0 +1,70 @@
+<!doctype html>
+
+<head>
+  <title>TensorFlow.js</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./scss/demo.scss" />
+</head>
+
+<body>
+  <div class="tfjs-example-container centered-container">
+    <section class="title-area">
+      <h1>Simple polynomial regression demo</h1>
+      <p class="subtitle">
+        Train a model to predict y-values for a cubic equation
+      </p>
+    </section>
+
+    <section>
+      <p class="section-head">Description</p>
+      <p>
+        This model learns to generate a curve to match a polynomial equation.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-head">Data Generation</p>
+      <p>
+        We generate training data using the following function and
+        co-efficients. Edit the co-efficients to generate new data and fit the
+        model.
+      </p>
+      <div class="equation-div">
+        <span>y =</span>
+        <input id="cubic-coeff" value="6e-6" />
+        <span>* x^3 +</span>
+        <input id="quad-coeff" value="-2e-3" />
+        <span>* x^2 +</span>
+        <input id="linear-coeff" value="0.1" />
+        <span>* x +</span>
+        <input id="const-coeff" value="10" />
+      </div>
+    </section>
+
+    <section>
+      <p class="section-head">Training Parameters</p>
+      <div class="input-div">
+        <span>Learning rate:</span>
+        <input id="learning-rate" value="0.5" />
+      </div>
+      <div class="input-div">
+        <span>Epochs:</span>
+        <input id="epochs" value="40" />
+      </div>
+    </section>
+
+    <section>
+      <p class="section-head">Model Output</p>
+      <p>
+        We plot a curve using y-coordinate predictions the model has learned to
+        make for each x-coordinate.
+      </p>
+      <div>
+        <canvas id="canvas" height="600" width="800"></canvas>
+      </div>
+    </section>
+  </div>
+</body>
+
+<script type="module" src="./index.js"></script>
